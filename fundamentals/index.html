@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratique e observe como HTML, teclado e estados chegam às tecnologias assistivas.">
+    <title>Laboratório de prática | A11y Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#experimento">Pular para o experimento</a>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="A11y Lab — início">
+        <span class="brand-mark" aria-hidden="true">◒</span>
+        <span>A11y <em>Lab</em></span>
+      </a>
+      <p class="header-context">laboratório de prática</p>
+    </header>
+
+    <main>
+      <section class="practice-hero" aria-labelledby="page-title">
+        <div>
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> experimento_01</p>
+          <h1 id="page-title">Pratique.<br><span>Observe.</span><br>Valide.</h1>
+        </div>
+        <div class="hero-copy">
+          <p class="hero-intro">Uma interface pequena para você investigar como HTML, teclado e mensagens de estado chegam até uma pessoa usuária.</p>
+          <p class="practice-note"><strong>Comece sem mouse.</strong><br>Use Tab, Shift + Tab e Enter antes de inspecionar o código.</p>
+        </div>
+      </section>
+
+      <section class="lab-section" id="experimento" aria-labelledby="experiment-title">
+        <div class="lab-intro">
+          <p class="section-label">Experimento 01</p>
+          <h2 id="experiment-title">Um formulário.<br><i>Várias perguntas.</i></h2>
+          <p>Teste o fluxo, depois abra o DevTools e compare o HTML com o que aparece na Accessibility Tree.</p>
+          <a class="text-link light-link" href="#checklist">Ver checklist <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="lab-demo">
+          <div class="demo-top"><span class="demo-label">form_01</span><span class="demo-status"><span aria-hidden="true"></span> pronto para testar</span></div>
+          <h3>Qual é o seu ponto de partida?</h3>
+          <p class="demo-copy">Envie o formulário vazio e depois tente novamente com um e-mail válido.</p>
+          <form id="registration-form" novalidate>
+            <label for="email">Seu e-mail</label>
+            <div class="input-row">
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" aria-describedby="form-message">
+              <button type="submit">Registrar</button>
+            </div>
+            <p class="form-message" id="form-message" role="status" aria-live="polite">Você poderá continuar sem compromisso.</p>
+          </form>
+          <div class="demo-observe"><span aria-hidden="true">◎</span><span>Observe: label, input, button e status.</span></div>
+        </div>
+      </section>
+
+      <section class="observe-section" id="checklist" aria-labelledby="observe-title">
+        <div>
+          <p class="section-label">Roteiro de observação</p>
+          <h2 id="observe-title">O que<br><i>você percebeu?</i></h2>
+        </div>
+        <div class="checklist">
+          <div class="check-item"><span class="check-number">01</span><p>Encontre todos os elementos interativos usando apenas Tab.</p></div>
+          <div class="check-item"><span class="check-number">02</span><p>Confirme se cada campo tem um nome acessível.</p></div>
+          <div class="check-item"><span class="check-number">03</span><p>Observe a ordem de foco e o indicador visível.</p></div>
+          <div class="check-item"><span class="check-number">04</span><p>Envie o formulário vazio e perceba como o erro é comunicado.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">◒</span><span>A11y <em>Lab</em></span></a>
+      <p>aprendizado por observação</p>
+      <p>experimento_01</p>
+    </footer>
+  </body>
+</html>
