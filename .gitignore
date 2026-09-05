@@ -27,5 +27,9 @@ game28.dta
 # temporary build of the game before being moved to Compiled/ folder
 *.exe
 
+# Node
+node_modules/
+.next/
+
 # Log files
 warnings.log
