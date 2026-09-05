@@ -1,5 +1,32 @@
 # Guia de contribuição
 
+## Fluxo entre branches
+
+A branch `main` representa o ambiente produtivo e deve ser alterada somente por meio de Pull Requests revisados. O desenvolvimento e a validação acontecem na branch `develop`.
+
+Fluxo padrão:
+
+```text
+feature/*, fix/*, docs/*  →  develop  →  main (produção)
+```
+
+Regras do fluxo:
+
+- Crie as branches de trabalho a partir de `develop`.
+- Faça o desenvolvimento e execute os testes em `develop`.
+- Abra Pull Requests das branches de trabalho para `develop`.
+- Após a validação, abra um Pull Request de `develop` para `main`.
+- Não faça commits diretamente em `main`.
+- Mantenha `main` estável e evite alterações fora do fluxo de Pull Requests.
+
+Para iniciar um trabalho novo:
+
+```bash
+git switch develop
+git pull origin develop
+git switch -c feature/nome-da-tarefa
+```
+
 ## Nomeação de branches
 
 Use o formato:
