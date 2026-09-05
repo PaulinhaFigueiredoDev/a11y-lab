@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+:root { --ink: #1d1c19; --paper: #f7f5f0; --lime: #d9f26a; --line: #d8d5cc; --muted: #68675f; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+a { color: inherit; text-decoration: none; }
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 5; background: var(--lime); padding: .7rem 1rem; font-weight: 700; }
+.skip-link:focus { top: 1rem; }
+.site-header { align-items: center; display: flex; justify-content: space-between; margin: auto; max-width: 1160px; padding: 1.7rem 2.5rem; }
+.brand { align-items: center; display: flex; font-family: 'Syne', sans-serif; font-size: 1.22rem; font-weight: 800; gap: .45rem; letter-spacing: -.05em; }
+.brand em { color: #85857c; font-style: normal; }
+.brand-mark { align-items: center; background: var(--ink); border-radius: 50%; color: var(--lime); display: inline-flex; font-family: sans-serif; font-size: 1.45rem; height: 28px; justify-content: center; line-height: 1; transform: rotate(-35deg); width: 28px; }
+.header-context, .kicker, .section-label, .demo-label, .demo-status, .form-message, .demo-observe, .site-footer p { font-family: 'DM Mono', monospace; text-transform: uppercase; }
+.header-context { color: var(--muted); font-size: .65rem; letter-spacing: .08em; }
+.practice-hero { border-bottom: 1px solid var(--line); display: grid; gap: 4rem; grid-template-columns: 1fr 1fr; margin: auto; max-width: 1160px; padding: 5.5rem 2.5rem 6rem; }
+.kicker, .section-label { color: #9a988e; font-size: .68rem; letter-spacing: .08em; }
+.kicker { align-items: center; display: flex; gap: .6rem; margin: 0 0 2.2rem; }
+.kicker-dot { background: #ff6548; border-radius: 50%; height: 8px; width: 8px; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: 'Syne', sans-serif; letter-spacing: -.065em; }
+h1 { font-size: clamp(4rem, 8vw, 7.5rem); line-height: .86; margin-bottom: 0; }
+h1 span, h2 i { color: #85857c; font-style: normal; }
+.hero-copy { align-self: end; max-width: 390px; padding-bottom: .4rem; }
+.hero-intro { color: var(--muted); font-size: 1.08rem; line-height: 1.55; }
+.practice-note { border-left: 2px solid var(--lime); font-family: 'DM Mono', monospace; font-size: .7rem; line-height: 1.6; margin: 2.3rem 0 0; padding-left: 1rem; text-transform: uppercase; }
+.practice-note strong { font-weight: 500; }
+.lab-section { background: #25241f; color: var(--paper); display: grid; gap: 5rem; grid-template-columns: .85fr 1.15fr; padding: 7.5rem max(2.5rem, calc((100vw - 1160px) / 2)); }
+.section-label { margin-bottom: 1.5rem; }
+.lab-intro h2, .observe-section h2 { font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: .96; margin-bottom: 1.8rem; }
+.lab-intro h2 i { color: var(--lime); }
+.lab-intro > p:not(.section-label) { color: #b7b5aa; font-size: .98rem; line-height: 1.6; max-width: 350px; }
+.text-link { border-bottom: 1px solid currentColor; font-family: 'DM Mono', monospace; font-size: .68rem; padding-bottom: .3rem; text-transform: uppercase; }
+.light-link { color: var(--lime); display: inline-block; margin-top: 1.3rem; }
+.lab-demo { background: var(--paper); color: var(--ink); padding: 2rem; }
+.demo-top { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding-bottom: 1.2rem; }
+.demo-label, .demo-status, .form-message, .demo-observe { font-size: .6rem; letter-spacing: .06em; }
+.demo-status { align-items: center; color: #5e8b5d; display: flex; }.demo-status span { background: #74bf76; border-radius: 50%; height: 6px; margin-right: .4rem; width: 6px; }
+.lab-demo h3 { font-family: 'Syne', sans-serif; font-size: 2.2rem; letter-spacing: -.06em; line-height: 1; margin: 2.7rem 0 .7rem; max-width: 400px; }
+.demo-copy { color: var(--muted); font-size: .9rem; }
+form { margin-top: 2rem; } label { display: block; font-family: 'DM Mono', monospace; font-size: .68rem; margin-bottom: .55rem; text-transform: uppercase; }.input-row { display: flex; } input { background: transparent; border: 1px solid #bdbab0; border-right: 0; color: var(--ink); flex: 1; font: inherit; min-width: 0; padding: 1rem; } input:focus { border-color: var(--ink); outline: 3px solid #b9d32f; outline-offset: 2px; } button { background: var(--ink); border: 0; color: var(--paper); cursor: pointer; font-family: 'DM Mono', monospace; font-size: .68rem; padding: 0 1.3rem; text-transform: uppercase; } button:hover, button:focus-visible { background: #48473f; }.form-message { color: var(--muted); min-height: 1.2rem; }
+.demo-observe { align-items: center; border-top: 1px solid var(--line); color: #838178; display: flex; gap: .5rem; margin-top: 2.8rem; padding-top: 1rem; }.demo-observe span:first-child { color: #ff6548; font-size: 1.3rem; }
+.observe-section { display: grid; gap: 5rem; grid-template-columns: 1fr 1fr; margin: auto; max-width: 1160px; padding: 7.5rem 2.5rem; }.checklist { border-top: 1px solid var(--line); }.check-item { align-items: flex-start; border-bottom: 1px solid var(--line); display: flex; gap: 1.5rem; padding: 1.3rem 0; }.check-number { color: #9a988e; font-family: 'DM Mono', monospace; font-size: .68rem; }.check-item p { font-size: 1rem; line-height: 1.45; margin: 0; max-width: 380px; }
+.site-footer { align-items: center; border-top: 1px solid var(--line); display: flex; justify-content: space-between; margin: auto; max-width: 1160px; padding: 1.8rem 2.5rem; }.site-footer p { color: var(--muted); font-size: .6rem; margin: 0; }
+:focus-visible { outline: 3px solid #5b44df; outline-offset: 4px; }
+@media (max-width: 760px) { .site-header { padding: 1.3rem 1.25rem; }.header-context { font-size: .58rem; }.practice-hero { display: block; padding: 4rem 1.25rem 4.5rem; }.hero-copy { margin-top: 3rem; }.lab-section, .observe-section { display: block; padding: 5rem 1.25rem; }.lab-demo { margin-top: 3.5rem; padding: 1.3rem; }.input-row { display: block; }.input-row input { border-right: 1px solid #bdbab0; width: 100%; }.input-row button { margin-top: .5rem; min-height: 48px; width: 100%; }.observe-section h2 { margin-bottom: 3rem; }.site-footer { align-items: start; flex-direction: column; gap: 1.2rem; padding: 1.8rem 1.25rem; } }
