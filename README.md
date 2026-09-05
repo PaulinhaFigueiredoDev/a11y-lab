@@ -30,7 +30,6 @@ Durante os estudos, os componentes serão avaliados utilizando diferentes combin
 * Accordions
 * Tabs
 * Menus
-* Componentes React acessíveis
 * Testes manuais de acessibilidade
 * Testes automatizados
 
@@ -39,8 +38,6 @@ Durante os estudos, os componentes serão avaliados utilizando diferentes combin
 * HTML
 * CSS
 * JavaScript
-* React
-* Next.js
 * Chrome DevTools
 * Lighthouse
 * axe
@@ -53,8 +50,8 @@ Os testes serão realizados principalmente com:
 | Sistema | Navegador | Tecnologia assistiva |
 | ------- | --------- | -------------------- |
 | Windows | Chrome    | NVDA                 |
-| macOS   | Safari    | VoiceOver            |
-| iOS     | Safari    | VoiceOver            |
+| macOS   | Safari    | VoiceOver             |
+| iOS     | Safari    | VoiceOver             |
 | Android | Chrome    | TalkBack             |
 
 ## 🧪 Como os componentes serão testados
@@ -135,25 +132,22 @@ Durante os estudos serão desenvolvidos e avaliados componentes como:
 * Alert
 * Live Region
 
-## 📂 Estrutura planejada
+## 📂 Estrutura
 
 ```text
 a11y-lab/
 │
-├── components/
-│   ├── Button/
-│   ├── Accordion/
-│   ├── Tabs/
-│   ├── Modal/
-│   ├── Dropdown/
-│   ├── Form/
-│   └── LiveRegion/
+├── fundamentals/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
 │
 ├── tests/
 │   ├── keyboard.md
 │   ├── nvda-chrome.md
-│   ├── voiceover-safari.md
-│   └── talkback-chrome.md
+│   ├── voiceover-macos-safari.md
+│   ├── voiceover-ios-safari.md
+│   └── talkback-android-chrome.md
 │
 ├── docs/
 │   ├── accessibility-tree.md
@@ -162,6 +156,71 @@ a11y-lab/
 │
 └── README.md
 ```
+
+O projeto está disponível está em `fundamentals/`.
+
+## ▶️ Como rodar o projeto
+
+### Pré-requisitos
+
+Instale previamente:
+
+* Node.js 18 ou superior, com npm 9 ou superior;
+* Python 3.
+
+As versões de Node.js e npm são informadas no campo `engines` do `package.json`. Esse campo apenas documenta os requisitos: ele não instala nem atualiza as ferramentas automaticamente. O Python também não é instalado pelo npm.
+
+#### macOS (Homebrew)
+
+```bash
+brew install node python
+```
+
+#### Ubuntu/Debian
+
+```bash
+sudo apt update
+sudo apt install nodejs npm python3
+```
+
+#### Windows (WinGet)
+
+No PowerShell:
+
+```powershell
+winget install OpenJS.NodeJS
+winget install Python.Python.3
+```
+
+Confirme as versões instaladas:
+
+```bash
+node --version
+npm --version
+python3 --version
+```
+
+No Windows, o comando de verificação pode ser `python --version`, dependendo da instalação.
+
+### Iniciar o laboratório
+
+Na raiz do projeto, execute:
+
+```bash
+npm run dev
+```
+
+Depois, acesse <http://localhost:8000/>. O comando inicia um servidor Python na pasta `fundamentals`.
+
+No Windows, use o script específico:
+
+```powershell
+npm run dev:windows
+```
+
+Também é possível abrir `fundamentals/index.html` diretamente no navegador, embora um servidor local seja útil para manter o mesmo contexto de execução.
+
+O projeto não possui dependências npm externas no momento, portanto não é necessário executar `npm install`. Se quiser validar a configuração local, você pode executar `npm install` na raiz; isso não instalará pacotes adicionais.
 
 ## 📅 Trilha de estudos
 
@@ -206,21 +265,6 @@ a11y-lab/
 * controles
 * formulários
 
-### React / Next.js
-
-Construção e validação de componentes reais:
-
-* Button
-* Form
-* Accordion
-* Tabs
-* Modal
-* Dropdown
-* Toast
-* Live Region
-
-Os componentes serão testados em diferentes combinações de navegador e tecnologia assistiva.
-
 ## 📊 Matriz de testes
 
 Exemplo de registro:
@@ -234,6 +278,10 @@ Exemplo de registro:
 | Modal      | ⬜             | ⬜                  | ⬜                 |
 | Menu       | ⬜             | ⬜                  | ⬜                 |
 
+## 🔗 Formação
+
+A [Formação Prática — Acessibilidade para Dev Front-end](<./Formação Prática — Acessibilidade para Dev Front-end.md>) apresenta o passo a passo dos estudos, exercícios, trilhas de leitores de tela, checklists e critérios de validação.
+
 ## 🔗 Referências
 
 * [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
@@ -241,7 +289,7 @@ Exemplo de registro:
 * [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
 * [WebAIM](https://webaim.org/)
 * [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-* [Android Accessibility](https://developer.android.com/guide/topics/ui/accessibility)
+* [Android Accessibility](https://developer.android.com/accessibility)
 * [Apple Accessibility](https://developer.apple.com/accessibility/)
 
 ## 🚧 Status
@@ -254,4 +302,3 @@ O repositório será atualizado conforme novos conceitos, componentes e testes f
 
 > Acessibilidade não é apenas fazer com que uma interface "funcione com leitor de tela".
 > É garantir que diferentes pessoas consigam perceber, compreender, navegar e utilizar uma experiência digital.
-
