@@ -3,76 +3,87 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pratique e observe como HTML, teclado e estados chegam às tecnologias assistivas.">
-    <title>Laboratório de prática | A11y Lab</title>
+    <meta name="description" content="Playground para praticar testes manuais de acessibilidade com dez componentes interativos.">
+    <title>Playground de acessibilidade | A11y Lab</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#experimento">Pular para o experimento</a>
-
+    <a class="skip-link" href="#playground">Pular para o playground</a>
     <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="A11y Lab — início">
-        <span class="brand-mark" aria-hidden="true">◒</span>
-        <span>A11y <em>Lab</em></span>
-      </a>
-      <p class="header-context">laboratório de prática</p>
+      <a class="brand" href="#top" aria-label="A11y Lab — início"><span class="brand-mark" aria-hidden="true">◒</span><span>A11y <em>Lab</em></span></a>
+      <p class="header-context">playground de acessibilidade</p>
+      <nav class="site-nav" aria-label="Navegação principal"><a href="#testes-web">Testes Web</a><a href="#testes-mobile">Testes mobile</a><a href="#leitor-tela">Leitor de tela</a><a href="#playground">Componentes</a><a href="#checklist">Checklist</a><a href="#ferramentas">Ferramentas</a></nav>
     </header>
 
     <main>
-      <section class="practice-hero" aria-labelledby="page-title">
-        <div>
-          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> experimento_01</p>
-          <h1 id="page-title">Pratique.<br><span>Observe.</span><br>Valide.</h1>
-        </div>
-        <div class="hero-copy">
-          <p class="hero-intro">Uma interface pequena para você investigar como HTML, teclado e mensagens de estado chegam até uma pessoa usuária.</p>
-          <p class="practice-note"><strong>Comece sem mouse.</strong><br>Use Tab, Shift + Tab e Enter antes de inspecionar o código.</p>
+      <section class="hero" aria-labelledby="page-title">
+        <div><p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> ambiente_de_treino</p><h1 id="page-title">Teste.<br><span>Observe.</span><br>Aprenda.</h1></div>
+        <div class="hero-copy"><p>Pratique acessibilidade com teclado, leitor de tela, Lighthouse e axe em componentes que concentram problemas reais.</p><p class="practice-note"><strong>Comece sem mouse.</strong><br>Use Tab, setas, Enter, Espaço e Escape antes de abrir as ferramentas.</p></div>
+      </section>
+
+      <div class="testing-modes">
+      <section class="orientation-section" id="testes-web" aria-labelledby="orientation-title">
+        <div class="orientation-intro"><p class="section-label">Guia de navegação</p><h2 id="orientation-title">Testes Web</h2><p>Use o teclado para chegar aos controles, observar o foco e entender o que o leitor de tela anuncia.</p></div>
+        <div class="orientation-content">
+          <div class="key-guide" aria-labelledby="key-guide-title"><h3 id="key-guide-title">Teclas principais</h3><dl><div><dt>Tab</dt><dd>Avança para o próximo componente interativo.</dd></div><div><dt>Shift + Tab</dt><dd>Volta para o componente anterior.</dd></div><div><dt>Enter / Espaço</dt><dd>Ativa links, botões e controles.</dd></div><div><dt>Setas</dt><dd>Navegam dentro de tabs, menus e autocomplete.</dd></div><div><dt>Escape</dt><dd>Fecha diálogos, menus e sugestões abertas.</dd></div><div><dt>Home / End</dt><dd>Vão para o primeiro ou último item, quando aplicável.</dd></div></dl></div>
+          <aside class="focus-note" aria-labelledby="focus-note-title"><h3 id="focus-note-title">Foco e leitor de tela</h3><p>O foco deve ser visível, previsível e seguir uma ordem lógica. Confirme se o leitor anuncia nome, função, estado e mudança de conteúdo.</p><p>Quando um diálogo abrir, o foco deve entrar nele. Quando fechar, deve retornar ao controle que o abriu. O foco do navegador e a leitura do conteúdo devem permanecer coerentes, mesmo quando o leitor de tela estiver usando seu cursor de leitura.</p><p class="note-tip"><strong>Regra prática:</strong> Tab muda de componente; as setas geralmente movem o foco dentro de um componente complexo.</p></aside>
         </div>
       </section>
 
-      <section class="lab-section" id="experimento" aria-labelledby="experiment-title">
-        <div class="lab-intro">
-          <p class="section-label">Experimento 01</p>
-          <h2 id="experiment-title">Um formulário.<br><i>Várias perguntas.</i></h2>
-          <p>Teste o fluxo, depois abra o DevTools e compare o HTML com o que aparece na Accessibility Tree.</p>
-          <a class="text-link light-link" href="#checklist">Ver checklist <span aria-hidden="true">↓</span></a>
+      <section class="mobile-section" id="testes-mobile" aria-labelledby="mobile-title">
+        <div><p class="section-label">Guia de gestos</p><h2 id="mobile-title">Testes mobile</h2><p>Com VoiceOver ou TalkBack ativo, primeiro encontre o item e ouça seu anúncio; depois execute a ação.</p></div>
+        <div class="mobile-guides">
+          <article><h3>iPhone + VoiceOver</h3><ul><li>Deslize para a direita ou esquerda para ir ao próximo ou item anterior.</li><li>Toque para selecionar e ouça nome, função e estado.</li><li>Toque duas vezes para ativar o controle selecionado.</li><li>Deslize com três dedos para rolar a página.</li><li>Use o Rotor para navegar por headings, links, botões e campos.</li></ul><a class="reference-link" href="https://support.apple.com/guide/iphone/iph3e2e2281/ios" target="_blank" rel="noreferrer">Guia oficial de gestos do VoiceOver ↗</a></article>
+          <article><h3>Android + TalkBack</h3><ul><li>Deslize para a direita ou esquerda para mover o foco entre itens.</li><li>Toque para explorar e ouvir o item sob o dedo.</li><li>Toque duas vezes para ativar o item focado.</li><li>Deslize com dois dedos para rolar a página.</li><li>Use os controles de leitura para navegar por headings, links, tabelas e campos.</li></ul><a class="reference-link" href="https://support.google.com/accessibility/android/answer/6151827?hl=pt-BR" target="_blank" rel="noreferrer">Guia oficial de gestos do TalkBack ↗</a></article>
         </div>
+      </section>
+      </div>
 
-        <div class="lab-demo">
-          <div class="demo-top"><span class="demo-label">form_01</span><span class="demo-status"><span aria-hidden="true"></span> pronto para testar</span></div>
-          <h3>Qual é o seu ponto de partida?</h3>
-          <p class="demo-copy">Envie o formulário vazio e depois tente novamente com um e-mail válido.</p>
-          <form id="registration-form" novalidate>
-            <label for="email">Seu e-mail</label>
-            <div class="input-row">
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" aria-describedby="form-message">
-              <button type="submit">Registrar</button>
-            </div>
-            <p class="form-message" id="form-message" role="status" aria-live="polite">Você poderá continuar sem compromisso.</p>
-          </form>
-          <div class="demo-observe"><span aria-hidden="true">◎</span><span>Observe: label, input, button e status.</span></div>
+      <section class="screen-reader-section" id="leitor-tela" aria-labelledby="screen-reader-title">
+        <div class="screen-reader-heading"><p class="section-label">Teste Web + áudio</p><h2 id="screen-reader-title">Use o leitor.<br><i>Escute a interface.</i></h2><p>Faça uma primeira passagem sem olhar para a tela. O objetivo é descobrir se a estrutura, os nomes e os estados são compreensíveis apenas pelo áudio.</p></div>
+        <div class="screen-reader-content">
+          <article class="reader-guide"><h3>NVDA + Chrome</h3><ol><li>Abra o NVDA e recarregue a página.</li><li>Use <kbd>H</kbd> para percorrer headings e <kbd>D</kbd> para landmarks.</li><li>Use <kbd>K</kbd> para links e <kbd>B</kbd> para botões.</li><li>Entre nos campos com <kbd>Tab</kbd> e confirme label, valor e erro.</li><li>Teste os componentes e confirme se estados como “aberto”, “selecionado” e “fechado” são anunciados.</li></ol><a class="reference-link" href="https://webaim.org/articles/nvda/" target="_blank" rel="noreferrer">Guia WebAIM para testar com NVDA ↗</a></article>
+          <article class="reader-guide"><h3>VoiceOver + Safari</h3><ol><li>Ative o VoiceOver e navegue com <kbd>VO + ←</kbd> e <kbd>VO + →</kbd>.</li><li>Use o Rotor para navegar por headings, links, botões e campos.</li><li>Ative controles com <kbd>VO + Espaço</kbd> e confirme a mudança anunciada.</li><li>Teste formulários, diálogos e mensagens sem depender da informação visual.</li><li>Verifique se o foco entra e sai dos componentes sem perder o contexto.</li></ol><a class="reference-link" href="https://support.apple.com/guide/voiceover/welcome/mac" target="_blank" rel="noreferrer">Guia oficial do VoiceOver no Mac ↗</a></article>
+          <div class="listen-checklist"><h3>O que ouvir</h3><ul><li>Título da página e headings em ordem lógica.</li><li>Landmarks e nomes acessíveis dos controles.</li><li>Estado de tabs, menus, accordions e diálogo.</li><li>Labels, valores e mensagens de erro dos campos.</li><li>Mensagens dinâmicas, mudança de foco e retorno do foco.</li></ul><a class="reference-link" href="https://www.w3.org/WAI/test-evaluate/preliminary/" target="_blank" rel="noreferrer">W3C Easy Checks para Web ↗</a></div>
         </div>
       </section>
 
-      <section class="observe-section" id="checklist" aria-labelledby="observe-title">
-        <div>
-          <p class="section-label">Roteiro de observação</p>
-          <h2 id="observe-title">O que<br><i>você percebeu?</i></h2>
-        </div>
-        <div class="checklist">
-          <div class="check-item"><span class="check-number">01</span><p>Encontre todos os elementos interativos usando apenas Tab.</p></div>
-          <div class="check-item"><span class="check-number">02</span><p>Confirme se cada campo tem um nome acessível.</p></div>
-          <div class="check-item"><span class="check-number">03</span><p>Observe a ordem de foco e o indicador visível.</p></div>
-          <div class="check-item"><span class="check-number">04</span><p>Envie o formulário vazio e perceba como o erro é comunicado.</p></div>
+      <section class="how-section" aria-labelledby="how-title">
+        <div><p class="section-label">Método de estudo</p><h2 id="how-title">Teste cada estado.<br><i>Registre tudo.</i></h2></div>
+        <ol class="steps"><li><b>01</b><span>Navegue por teclado e observe foco, ordem e operação.</span></li><li><b>02</b><span>Inspecione name, role, state e value na Accessibility Tree.</span></li><li><b>03</b><span>Rode Lighthouse e axe; depois confirme os resultados manualmente.</span></li></ol>
+      </section>
+
+      <section class="playground" id="playground" aria-labelledby="playground-title">
+        <div class="section-intro"><p class="section-label">10 áreas de risco</p><h2 id="playground-title">Componentes<br><i>para investigar.</i></h2><p>Teste estados fechados e abertos, vazio e preenchido, erro e sucesso. Cada cartão indica o que observar.</p><a class="text-link" href="#checklist">Ir para o checklist <span aria-hidden="true">↓</span></a></div>
+        <div class="cards">
+          <article class="card" aria-labelledby="form-title"><div class="card-meta">01 / formulário</div><h3 id="form-title">Perfil de treino</h3><p>Teste nomes, campos obrigatórios, erros e mensagem de sucesso.</p><form id="practice-form" novalidate><label for="name">Nome</label><input id="name" name="name" autocomplete="name" aria-describedby="name-error"><p class="error" id="name-error"></p><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error"><p class="error" id="email-error"></p><button class="button" type="submit">Salvar perfil</button><p class="status" id="form-status" role="status" aria-live="polite"></p></form><p class="observe">Observe: label, erro, foco e anúncio.</p></article>
+
+          <article class="card" aria-labelledby="dialog-card-title"><div class="card-meta">02 / diálogo</div><h3 id="dialog-card-title">Confirmação de ação</h3><p>Confira foco inicial, fechamento por Escape e retorno do foco.</p><button class="button" id="open-dialog" type="button">Abrir diálogo</button><p class="observe">Observe: foco não escapa do diálogo.</p></article>
+
+          <article class="card" aria-labelledby="menu-title"><div class="card-meta">03 / menu</div><h3 id="menu-title">Ações do perfil</h3><p>Use Enter, Espaço, Escape e as setas para explorar o menu.</p><div class="menu-wrap"><button class="button" id="menu-button" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="profile-menu">Abrir ações <span aria-hidden="true">▾</span></button><ul class="menu" id="profile-menu" role="menu" hidden><li role="none"><button type="button" role="menuitem">Ver perfil</button></li><li role="none"><button type="button" role="menuitem">Editar preferências</button></li><li role="none"><button type="button" role="menuitem">Sair do treino</button></li></ul></div><p class="observe">Observe: estado expandido e foco nos itens.</p></article>
+
+          <article class="card" aria-labelledby="tabs-title"><div class="card-meta">04 / abas</div><h3 id="tabs-title">Lentes de teste</h3><p>Use as setas dentro do conjunto de abas e Tab para sair.</p><div class="tabs"><div class="tab-list" role="tablist" aria-label="Lentes de teste"><button class="tab" role="tab" id="tab-visual" aria-controls="panel-visual" aria-selected="true">Visual</button><button class="tab" role="tab" id="tab-keyboard" aria-controls="panel-keyboard" aria-selected="false" tabindex="-1">Teclado</button><button class="tab" role="tab" id="tab-reader" aria-controls="panel-reader" aria-selected="false" tabindex="-1">Leitor</button></div><div class="tab-panel" role="tabpanel" id="panel-visual" aria-labelledby="tab-visual" tabindex="0">Observe contraste, zoom de 200%, reflow e uso de cor.</div><div class="tab-panel" role="tabpanel" id="panel-keyboard" aria-labelledby="tab-keyboard" tabindex="0" hidden>Observe foco visível, ordem e operação sem mouse.</div><div class="tab-panel" role="tabpanel" id="panel-reader" aria-labelledby="tab-reader" tabindex="0" hidden>Observe headings, nomes, estados e mensagens dinâmicas.</div></div></article>
+
+          <article class="card" aria-labelledby="accordion-title"><div class="card-meta">05 / acordeão</div><h3 id="accordion-title">Perguntas frequentes</h3><p>Confira se o estado aberto é comunicado e se o painel correto aparece.</p><div class="accordion"><h4><button class="accordion-trigger" aria-expanded="true" aria-controls="answer-1" id="question-1">O que testar com teclado?</button></h4><div class="accordion-panel" id="answer-1" role="region" aria-labelledby="question-1">Foco, ordem lógica, operação com Enter ou Espaço e indicador visível.</div><h4><button class="accordion-trigger" aria-expanded="false" aria-controls="answer-2" id="question-2">O que testar com leitor?</button></h4><div class="accordion-panel" id="answer-2" role="region" aria-labelledby="question-2" hidden>Nome, função, estado expandido e relação entre pergunta e resposta.</div><h4><button class="accordion-trigger" aria-expanded="false" aria-controls="answer-3" id="question-3">O que testar no axe?</button></h4><div class="accordion-panel" id="answer-3" role="region" aria-labelledby="question-3" hidden>Compare alertas estruturais com o comportamento percebido na interface.</div></div></article>
+
+          <article class="card" aria-labelledby="combo-title"><div class="card-meta">06 / autocomplete</div><h3 id="combo-title">Escolha uma tecnologia</h3><p>Digite e use as setas para selecionar uma sugestão.</p><label for="technology-input">Tecnologia assistiva</label><div class="combobox-wrap"><input id="technology-input" role="combobox" aria-autocomplete="list" aria-controls="technology-list" aria-expanded="false" autocomplete="off"><ul class="suggestions" id="technology-list" role="listbox" hidden></ul></div><p class="status" id="combo-status" role="status" aria-live="polite"></p><p class="observe">Observe: valor digitado, opção ativa e anúncio.</p></article>
+
+          <article class="card" aria-labelledby="toast-title"><div class="card-meta">07 / live region</div><h3 id="toast-title">Mensagem dinâmica</h3><p>Acione uma mudança de conteúdo e verifique se ela é anunciada.</p><button class="button" id="toast-button" type="button">Mostrar mensagem</button><div class="toast" id="toast" role="status" aria-live="polite" hidden>Preferência salva com sucesso.</div><p class="observe">Observe: a mensagem não depende apenas de cor.</p></article>
+
+          <article class="card" aria-labelledby="carousel-title"><div class="card-meta">08 / carrossel</div><h3 id="carousel-title">Rotina de teste</h3><p id="carousel-description">Slide 1 de 3: teste primeiro sem mouse.</p><div class="carousel"><button class="icon-button" id="previous-slide" type="button" aria-label="Slide anterior">←</button><div class="slide" id="current-slide" aria-live="polite">Teclado primeiro</div><button class="icon-button" id="next-slide" type="button" aria-label="Próximo slide">→</button></div><button class="pause-button" id="pause-carousel" type="button" aria-pressed="false">Pausar rotação</button><p class="observe">Observe: controles nomeados, pausa e anúncio.</p></article>
+
+          <article class="card table-card" aria-labelledby="table-title"><div class="card-meta">09 / tabela</div><h3 id="table-title">Matriz de validação</h3><p>Confira caption, cabeçalhos e relação entre dados.</p><div class="table-scroll"><table><caption>Resultados de validação por componente</caption><thead><tr><th scope="col">Componente</th><th scope="col">Teclado</th><th scope="col">Leitor</th></tr></thead><tbody><tr><th scope="row">Formulário</th><td>pendente</td><td>pendente</td></tr><tr><th scope="row">Diálogo</th><td>pendente</td><td>pendente</td></tr><tr><th scope="row">Menu</th><td>pendente</td><td>pendente</td></tr></tbody></table></div><p class="observe">Observe: estrutura, cabeçalhos e leitura por linha.</p></article>
+
         </div>
       </section>
+
+      <section class="checklist-section" id="checklist" aria-labelledby="checklist-title"><div><p class="section-label">Roteiro manual</p><h2 id="checklist-title">Registre<br><i>o que percebeu.</i></h2><p>Marque os pontos que já verificou. Este checklist é local e serve como apoio ao estudo.</p></div><div class="checklist"><label><input type="checkbox"><span><b>01</b> Todos os controles recebem foco?</span></label><label><input type="checkbox"><span><b>02</b> A ordem de foco e o indicador fazem sentido?</span></label><label><input type="checkbox"><span><b>03</b> Nome, função, estado e valor são comunicados?</span></label><label><input type="checkbox"><span><b>04</b> Erros e mudanças são anunciados?</span></label><label><input type="checkbox"><span><b>05</b> A página funciona com zoom e sem depender de cor?</span></label></div></section>
+
+      <section class="tools-section" id="ferramentas" aria-labelledby="tools-title"><p class="section-label">Ferramentas de apoio</p><h2 id="tools-title">Lighthouse + axe<br><i>como ponto de partida.</i></h2><div class="tools-grid"><div><strong>Lighthouse</strong><p>No DevTools, abra Lighthouse, selecione Accessibility e gere um relatório em mobile ou desktop.</p></div><div><strong>axe</strong><p>Abra a extensão ou painel axe no DevTools e execute uma análise. Investigue cada resultado na interface.</p></div><div><strong>Depois do relatório</strong><p>Reproduza o problema com teclado e leitor de tela. A ferramenta ajuda, mas não substitui a validação manual.</p></div></div><div class="official-references"><h3>Referências oficiais</h3><ul><li><a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/" target="_blank" rel="noreferrer">W3C WAI-ARIA: interface de teclado</a></li><li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank" rel="noreferrer">W3C APG: padrão de tabs</a></li><li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/" target="_blank" rel="noreferrer">W3C APG: padrão de accordion</a></li><li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" target="_blank" rel="noreferrer">W3C APG: diálogo modal</a></li><li><a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html" target="_blank" rel="noreferrer">W3C WCAG 2.2: ordem do foco</a></li><li><a href="https://www.w3.org/WAI/test-evaluate/easy-checks/keyboard-focus/" target="_blank" rel="noreferrer">W3C WAI: foco visível</a></li></ul></div></section>
     </main>
 
-    <footer class="site-footer">
-      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">◒</span><span>A11y <em>Lab</em></span></a>
-      <p>aprendizado por observação</p>
-      <p>experimento_01</p>
-    </footer>
+    <dialog id="practice-dialog" aria-labelledby="dialog-title"><div class="dialog-content"><button class="dialog-close" id="close-dialog" type="button" aria-label="Fechar diálogo">×</button><p class="section-label">Exemplo de diálogo</p><h2 id="dialog-title">O foco chegou aqui?</h2><p>Use Tab, pressione Escape para fechar e confirme se o foco retorna ao botão que abriu este diálogo.</p><button class="button" id="dialog-confirm" type="button">Entendi</button></div></dialog>
+    <footer class="site-footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">◒</span><span>A11y <em>Lab</em></span></a><p>aprendizado por observação</p><p>playground_01</p></footer>
   </body>
 </html>

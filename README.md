@@ -1,208 +1,165 @@
 # ♿ A11y Lab
 
-Laboratório prático de **acessibilidade web para Front-end**, criado para estudar e aplicar conceitos de acessibilidade durante o desenvolvimento de interfaces.
+Playground prático para aprender, praticar e validar acessibilidade na Web por meio de testes manuais.
 
-O projeto faz parte de uma trilha de estudos focada em entender não apenas as recomendações da WCAG, mas também **como navegadores e tecnologias assistivas interpretam os componentes que desenvolvemos**.
+A página reúne componentes interativos, orientações de navegação por teclado e leitor de tela, testes para Web e mobile, além de instruções para usar Lighthouse e axe como ferramentas de apoio.
 
-## 🎯 Objetivo
+## Objetivo
 
-Aprender a desenvolver e validar interfaces acessíveis, entendendo o caminho entre:
+Praticar o caminho entre:
 
-**HTML → DOM → Accessibility Tree → navegador/sistema operacional → tecnologia assistiva → pessoa usuária**
+`HTML → DOM → Accessibility Tree → navegador → tecnologia assistiva → pessoa usuária`
 
-Durante os estudos, os componentes serão avaliados utilizando diferentes combinações de navegadores e leitores de tela.
+O foco do projeto é entender se uma interface pode ser percebida, compreendida, navegada e operada por diferentes pessoas.
 
-## 📚 Conteúdos estudados
+## O que existe no playground
 
-* HTML semântico
-* Accessibility Tree
-* Accessible Name
-* Role, State e Value
-* Navegação por teclado
-* Gerenciamento de foco
-* WCAG 2.2
-* WAI-ARIA
-* ARIA Authoring Practices Guide
-* Formulários acessíveis
-* Mensagens de erro
-* Live Regions
-* Modais
-* Accordions
-* Tabs
-* Menus
-* Testes manuais de acessibilidade
-* Testes automatizados
+A página principal contém exemplos funcionais para investigar:
 
-## 🧑‍💻 Tecnologias
+- Formulários, labels, erros e validação
+- Modal / Dialog
+- Dropdown / Menu
+- Tabs
+- Accordion
+- Autocomplete / Combobox
+- Toast / Live Region
+- Carrossel
+- Tabela
+- Foco e navegação por teclado
 
-* HTML
-* CSS
-* JavaScript
-* Chrome DevTools
-* Lighthouse
-* axe
-* eslint-plugin-jsx-a11y
+Cada exemplo apresenta estados e comportamentos para serem observados manualmente.
 
-## 🔊 Tecnologias assistivas utilizadas
+## Como estudar
 
-Os testes serão realizados principalmente com:
+### Testes Web
 
-| Sistema | Navegador | Tecnologia assistiva |
-| ------- | --------- | -------------------- |
-| Windows | Chrome    | NVDA                 |
-| macOS   | Safari    | VoiceOver             |
-| iOS     | Safari    | VoiceOver             |
-| Android | Chrome    | TalkBack             |
+Use teclado físico e verifique:
 
-## 🧪 Como os componentes serão testados
+- `Tab`: próximo componente interativo
+- `Shift + Tab`: componente anterior
+- `Enter` e `Espaço`: ativação
+- Setas: navegação dentro de tabs, menus e autocomplete
+- `Escape`: fechamento de diálogos, menus e sugestões
+- `Home` e `End`: primeiro e último item, quando aplicável
 
-Cada componente desenvolvido deverá passar por diferentes etapas de validação.
+Observe se o foco é visível, previsível e segue uma ordem lógica.
 
-### 1. Navegação por teclado
+### Testes Web com leitor de tela
 
-Testar utilizando:
+#### NVDA + Chrome
 
-* `Tab`
-* `Shift + Tab`
-* `Enter`
-* `Space`
-* `Escape`
-* Setas direcionais
+- Navegue por headings, landmarks, links e botões.
+- Teste os campos e confirme label, valor e mensagem de erro.
+- Confirme se estados como aberto, selecionado e fechado são anunciados.
+- Verifique mensagens dinâmicas e mudanças de foco.
 
-Perguntas importantes:
+#### VoiceOver + Safari
 
-* Todos os elementos interativos recebem foco?
-* A ordem de foco faz sentido?
-* O foco está visível?
-* É possível executar todas as ações sem utilizar o mouse?
+- Navegue pelos itens usando o teclado do VoiceOver.
+- Use o Rotor para headings, links, botões e campos.
+- Teste formulários, diálogos, menus e conteúdo dinâmico.
+- Confirme se o foco entra e retorna corretamente nos componentes.
 
-### 2. Accessibility Tree
+O foco do navegador e a leitura do conteúdo devem permanecer coerentes. Quando um diálogo abre, o foco deve entrar nele; quando fecha, deve retornar ao controle que o abriu.
 
-Verificar no DevTools:
+### Testes mobile
 
-* **Name**
-* **Role**
-* **State**
-* **Value**
+#### iPhone + VoiceOver
 
-### 3. Leitor de tela
+- Deslize para a direita ou esquerda para navegar.
+- Toque para selecionar e toque duas vezes para ativar.
+- Deslize com três dedos para rolar.
+- Use o Rotor para mudar o tipo de navegação.
 
-Validar se o componente anuncia corretamente:
+#### Android + TalkBack
 
-* nome
-* função
-* estado
-* mudanças de conteúdo
-* mensagens importantes
+- Deslize para a direita ou esquerda para mover o foco.
+- Explore por toque para ouvir o item sob o dedo.
+- Toque duas vezes para ativar.
+- Deslize com dois dedos para rolar.
+- Use os controles de leitura para headings, links, tabelas e campos.
 
-A pergunta não deve ser apenas:
+Os gestos podem variar conforme sistema, versão, aparelho e configuração do leitor de tela.
 
-> "O leitor de tela lê?"
+## O que observar
 
-Mas sim:
+Para cada componente, verifique:
 
-> "O leitor de tela anuncia a informação correta e permite que a pessoa interaja com o componente?"
+- Todos os controles são alcançáveis pelo teclado?
+- A ordem de foco é lógica?
+- O foco permanece visível?
+- O controle possui nome acessível?
+- Nome, função, estado e valor são anunciados?
+- Mensagens de erro são compreensíveis?
+- Mudanças dinâmicas são anunciadas?
+- O foco é gerenciado ao abrir e fechar componentes?
+- A experiência continua compreensível sem depender de cor?
+- A página funciona com zoom e em telas pequenas?
 
-### 4. WCAG
+## Lighthouse e axe
 
-Relacionar problemas encontrados aos critérios da **WCAG 2.2**.
+As ferramentas automatizadas são usadas como apoio à investigação manual.
 
-### 5. Testes automatizados
+### Lighthouse
 
-Utilizar ferramentas como:
+1. Abra o DevTools do navegador.
+2. Acesse a aba Lighthouse.
+3. Selecione a categoria Accessibility.
+4. Gere um relatório para mobile ou desktop.
+5. Investigue cada apontamento no código e na interface.
 
-* Lighthouse
-* axe
-* eslint-plugin-jsx-a11y
+### axe
 
-Testes automatizados complementam os testes manuais, mas não os substituem.
+1. Abra a extensão ou o painel axe no DevTools.
+2. Execute uma análise da página.
+3. Leia cada resultado e sua recomendação.
+4. Reproduza o problema usando teclado e leitor de tela.
+5. Registre a decisão e a correção no seu roteiro de estudo.
 
-## 🧩 Componentes do laboratório
+Lighthouse e axe ajudam a encontrar problemas estruturais e de contraste, mas não substituem a validação manual de foco, ordem, contexto, operação e qualidade dos anúncios.
 
-Durante os estudos serão desenvolvidos e avaliados componentes como:
+## Tecnologias
 
-* Button
-* Link
-* Form
-* Accordion
-* Tabs
-* Modal / Dialog
-* Dropdown / Menu
-* Toast
-* Alert
-* Live Region
+- HTML
+- CSS
+- JavaScript
+- Chrome DevTools
+- Lighthouse
+- axe
 
-## 📂 Estrutura
+## Tecnologias assistivas
+
+| Plataforma | Navegador | Tecnologia assistiva |
+| --- | --- | --- |
+| Windows | Chrome | NVDA |
+| macOS | Safari | VoiceOver |
+| iOS | Safari | VoiceOver |
+| Android | Chrome | TalkBack |
+
+## Estrutura
 
 ```text
 a11y-lab/
-│
 ├── fundamentals/
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-│
-├── tests/
-│   ├── keyboard.md
-│   ├── nvda-chrome.md
-│   ├── voiceover-macos-safari.md
-│   ├── voiceover-ios-safari.md
-│   └── talkback-android-chrome.md
-│
-├── docs/
-│   ├── accessibility-tree.md
-│   ├── wcag-checklist.md
-│   └── screen-reader-matrix.md
-│
+├── package.json
+├── package-lock.json
 └── README.md
 ```
 
-O projeto está disponível está em `fundamentals/`.
-
-## ▶️ Como rodar o projeto
+## Como executar
 
 ### Pré-requisitos
 
-Instale previamente:
+- Node.js 18 ou superior
+- npm 9 ou superior
+- Python 3
 
-* Node.js 18 ou superior, com npm 9 ou superior;
-* Python 3.
+O projeto não possui dependências npm externas.
 
-As versões de Node.js e npm são informadas no campo `engines` do `package.json`. Esse campo apenas documenta os requisitos: ele não instala nem atualiza as ferramentas automaticamente. O Python também não é instalado pelo npm.
-
-#### macOS (Homebrew)
-
-```bash
-brew install node python
-```
-
-#### Ubuntu/Debian
-
-```bash
-sudo apt update
-sudo apt install nodejs npm python3
-```
-
-#### Windows (WinGet)
-
-No PowerShell:
-
-```powershell
-winget install OpenJS.NodeJS
-winget install Python.Python.3
-```
-
-Confirme as versões instaladas:
-
-```bash
-node --version
-npm --version
-python3 --version
-```
-
-No Windows, o comando de verificação pode ser `python --version`, dependendo da instalação.
-
-### Iniciar o laboratório
+### Iniciar
 
 Na raiz do projeto, execute:
 
@@ -210,95 +167,28 @@ Na raiz do projeto, execute:
 npm run dev
 ```
 
-Depois, acesse <http://localhost:8000/>. O comando inicia um servidor Python na pasta `fundamentals`.
+Acesse:
 
-No Windows, use o script específico:
+<http://localhost:8000/>
 
-```powershell
-npm run dev:windows
-```
+Também é possível abrir `fundamentals/index.html` diretamente no navegador.
 
-Também é possível abrir `fundamentals/index.html` diretamente no navegador, embora um servidor local seja útil para manter o mesmo contexto de execução.
+## Referências oficiais
 
-O projeto não possui dependências npm externas no momento, portanto não é necessário executar `npm install`. Se quiser validar a configuração local, você pode executar `npm install` na raiz; isso não instalará pacotes adicionais.
+- [W3C WAI — Easy Checks](https://www.w3.org/WAI/test-evaluate/preliminary/)
+- [W3C APG — Keyboard Interface](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)
+- [W3C APG — Tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
+- [W3C APG — Accordion](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/)
+- [W3C APG — Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+- [WCAG 2.2 — Focus Order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html)
+- [W3C WAI — Visible Keyboard Focus](https://www.w3.org/WAI/test-evaluate/easy-checks/keyboard-focus/)
+- [WebAIM — Testing with Screen Readers](https://webaim.org/articles/screenreader_testing/)
+- [WebAIM — Using NVDA](https://webaim.org/articles/nvda/)
+- [Apple — VoiceOver no Mac](https://support.apple.com/guide/voiceover/welcome/mac)
+- [Apple — Gestos do VoiceOver no iPhone](https://support.apple.com/guide/iphone/iph3e2e2281/ios)
+- [Google — TalkBack no Chrome](https://support.google.com/accessibility/android/answer/2633135?hl=pt-BR)
+- [Google — Gestos do TalkBack](https://support.google.com/accessibility/android/answer/6151827?hl=pt-BR)
 
-## 📅 Trilha de estudos
+A validação pode variar conforme navegador, sistema operacional, versão do leitor de tela, configurações do dispositivo e tecnologia assistiva utilizada.
 
-### Fundamentos
-
-* Acessibilidade digital
-* Tecnologias assistivas
-* HTML semântico
-* Accessibility Tree
-* Name, Role, State e Value
-* Navegação por teclado
-* Gerenciamento de foco
-
-### NVDA + Chrome
-
-* Navegação com NVDA
-* Browse Mode e Focus Mode
-* Headings
-* Landmarks
-* Links
-* Botões
-* Formulários
-* Mensagens de erro
-
-### VoiceOver e TalkBack
-
-**VoiceOver + Safari**
-
-* navegação
-* Rotor
-* headings
-* links
-* formulários
-* componentes interativos
-
-**TalkBack + Chrome**
-
-* navegação linear
-* exploração por toque
-* headings
-* links
-* controles
-* formulários
-
-## 📊 Matriz de testes
-
-Exemplo de registro:
-
-| Componente | NVDA + Chrome | VoiceOver + Safari | TalkBack + Chrome |
-| ---------- | ------------- | ------------------ | ----------------- |
-| Button     | ⬜             | ⬜                  | ⬜                 |
-| Form       | ⬜             | ⬜                  | ⬜                 |
-| Accordion  | ⬜             | ⬜                  | ⬜                 |
-| Tabs       | ⬜             | ⬜                  | ⬜                 |
-| Modal      | ⬜             | ⬜                  | ⬜                 |
-| Menu       | ⬜             | ⬜                  | ⬜                 |
-
-## 🔗 Formação
-
-A [Formação Prática — Acessibilidade para Dev Front-end](<./Formação Prática — Acessibilidade para Dev Front-end.md>) apresenta o passo a passo dos estudos, exercícios, trilhas de leitores de tela, checklists e critérios de validação.
-
-## 🔗 Referências
-
-* [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
-* [WCAG Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/)
-* [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
-* [WebAIM](https://webaim.org/)
-* [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-* [Android Accessibility](https://developer.android.com/accessibility)
-* [Apple Accessibility](https://developer.apple.com/accessibility/)
-
-## 🚧 Status
-
-📚 Em desenvolvimento e estudo contínuo.
-
-O repositório será atualizado conforme novos conceitos, componentes e testes forem realizados.
-
----
-
-> Acessibilidade não é apenas fazer com que uma interface "funcione com leitor de tela".
-> É garantir que diferentes pessoas consigam perceber, compreender, navegar e utilizar uma experiência digital.
+> Acessibilidade não é apenas fazer uma interface funcionar com um leitor de tela. É garantir que diferentes pessoas consigam perceber, compreender, navegar e utilizar uma experiência digital.
