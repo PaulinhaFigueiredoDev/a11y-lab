@@ -1,5 +1,7 @@
 # ♿ A11y Lab
 
+> Este README descreve o estado final e o escopo completo do laboratório.
+
 Laboratório prático de **acessibilidade web para Front-end**, criado para estudar e aplicar conceitos de acessibilidade durante o desenvolvimento de interfaces.
 
 O projeto faz parte de uma trilha de estudos focada em entender não apenas as recomendações da WCAG, mas também **como navegadores e tecnologias assistivas interpretam os componentes que desenvolvemos**.
@@ -31,7 +33,6 @@ Durante os estudos, os componentes serão avaliados utilizando diferentes combin
 * Tabs
 * Menus
 * Testes manuais de acessibilidade
-* Testes automatizados
 
 ## 🧑‍💻 Tecnologias
 
@@ -41,7 +42,6 @@ Durante os estudos, os componentes serão avaliados utilizando diferentes combin
 * Chrome DevTools
 * Lighthouse
 * axe
-* eslint-plugin-jsx-a11y
 
 ## 🔊 Tecnologias assistivas utilizadas
 
@@ -107,30 +107,20 @@ Mas sim:
 
 Relacionar problemas encontrados aos critérios da **WCAG 2.2**.
 
-### 5. Testes automatizados
-
-Utilizar ferramentas como:
-
-* Lighthouse
-* axe
-* eslint-plugin-jsx-a11y
-
-Testes automatizados complementam os testes manuais, mas não os substituem.
-
 ## 🧩 Componentes do laboratório
 
 Durante os estudos serão desenvolvidos e avaliados componentes como:
 
-* Button
-* Link
-* Form
-* Accordion
-* Tabs
+* Formulário, erros e validação
 * Modal / Dialog
 * Dropdown / Menu
-* Toast
-* Alert
-* Live Region
+* Tabs
+* Accordion
+* Autocomplete / Combobox
+* Toast / Live Region
+* Carrossel
+* Tabela
+* Foco e navegação por teclado
 
 ## 📂 Estrutura
 
@@ -157,7 +147,7 @@ a11y-lab/
 └── README.md
 ```
 
-O projeto está disponível está em `fundamentals/`.
+O laboratório completo é organizado por fundamentos, componentes, documentação e registros de testes. A página principal reúne os exemplos funcionais e cada componente possui documentação e critérios de validação próprios.
 
 ## ▶️ Como rodar o projeto
 
@@ -278,10 +268,6 @@ Exemplo de registro:
 | Modal      | ⬜             | ⬜                  | ⬜                 |
 | Menu       | ⬜             | ⬜                  | ⬜                 |
 
-## 🔗 Formação
-
-A [Formação Prática — Acessibilidade para Dev Front-end](<./Formação Prática — Acessibilidade para Dev Front-end.md>) apresenta o passo a passo dos estudos, exercícios, trilhas de leitores de tela, checklists e critérios de validação.
-
 ## 🔗 Referências
 
 * [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
@@ -292,11 +278,17 @@ A [Formação Prática — Acessibilidade para Dev Front-end](<./Formação Prá
 * [Android Accessibility](https://developer.android.com/accessibility)
 * [Apple Accessibility](https://developer.apple.com/accessibility/)
 
-## 🚧 Status
+## ✅ Critérios do estado final
 
-📚 Em desenvolvimento e estudo contínuo.
+O laboratório é considerado concluído quando:
 
-O repositório será atualizado conforme novos conceitos, componentes e testes forem realizados.
+* Todos os componentes listados neste README possuem exemplos funcionais.
+* Cada componente pode ser utilizado integralmente por teclado.
+* Nome, função, estado e valor são comunicados corretamente.
+* Os fluxos principais foram verificados com NVDA, VoiceOver e TalkBack.
+* A matriz de testes e os checklists estão preenchidos.
+* As validações manuais estão registradas.
+* A documentação descreve decisões, limitações e critérios WCAG relacionados.
 
 ---
 
